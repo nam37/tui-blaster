@@ -6,8 +6,16 @@
 
 - Bun 1.2 or newer for the interactive OpenTUI app
 - Node 20 or newer for local simulation and tests
+- Windows or macOS
 
-OpenTUI's current TypeScript runtime is Bun-first. This project includes local Bun runners, and `npm run start` chooses the x64 Windows runner when needed for OpenTUI FFI.
+OpenTUI's current TypeScript runtime is Bun-first. This project depends on platform-neutral npm packages so Windows and macOS installs pull the appropriate native OpenTUI and Bun optional packages. `npm run start` uses `scripts/run-bun.mjs` to prefer the locally installed Bun binary and fall back to a global `bun` command.
+
+## Setup
+
+```sh
+npm install
+npm run start
+```
 
 ## Scripts
 
